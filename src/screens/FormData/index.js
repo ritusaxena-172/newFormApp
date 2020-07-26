@@ -91,24 +91,19 @@ export default function FormData() {
 
       return (
         <Grid item xs={3}>
-          <Paper className={clsx(classes.paper)}>
-            {/* <Box className={clsx(classes.paper)}> */}
-            <Box className={clsx(classes.box2)}>
+          <Paper elevation={3} className={clsx(classes.paper)}>
+            <div className={clsx(classes.box2)}>
               <Avatar className={clsx(classes.avatar)}>
                 {/* {item.name.charAt(0)} */}
                 {initials}
               </Avatar>
-              <Box className={clsx(classes.paper)}>
-                <h2 style={{ marginLeft: "5%" }}>{item.name}</h2>
-                {/* <h5>{item.end}</h5> */}
-                <h3 style={{ color: "grey" }}>
+              <div>
+                <h2>{item.name}</h2>
+                <h4 style={{ color: "grey" }}>
                   {item.developerType}-{item.end}
-                </h3>
-              </Box>
-              {/* <h4 style={{ color: "grey" }}>
-                  {item.developerType}-{item.end}
-                </h4> */}
-            </Box>
+                </h4>
+              </div>
+            </div>
             <Box className={clsx(classes.box2)}>
               <Box className={clsx(classes.inbox)}>
                 <EmailIcon color="disabled" />
@@ -120,11 +115,6 @@ export default function FormData() {
               </Box>
             </Box>
             <Box>
-              {show == false ? (
-                <ExpandMoreIcon onClick={showData} />
-              ) : (
-                <ArrowUpwardIcon onClick={showData} />
-              )}
               {show == true ? (
                 <OtherDetails
                   experience={item.experience.label}
@@ -133,8 +123,12 @@ export default function FormData() {
                   date={item.date}
                 />
               ) : null}
+              {show == false ? (
+                <ExpandMoreIcon onClick={showData} />
+              ) : (
+                <ArrowUpwardIcon onClick={showData} />
+              )}
             </Box>
-            {/* </Box> */}
           </Paper>
         </Grid>
       );
@@ -163,3 +157,45 @@ export default function FormData() {
     </Box>
   );
 }
+
+// <Box className={clsx(classes.box2)}>
+// <Avatar className={clsx(classes.avatar)}>
+//   {/* {item.name.charAt(0)} */}
+//   {initials}
+// </Avatar>
+//               <Box className={clsx(classes.paper)}>
+// <h2 style={{ marginLeft: "5%" }}>{item.name}</h2>
+//                 {/* <h5>{item.end}</h5> */}
+//                 <h3 style={{ color: "grey" }}>
+//                   {item.developerType}-{item.end}
+//                 </h3>
+//               </Box>
+// {/* <h4 style={{ color: "grey" }}>
+//     {item.developerType}-{item.end}
+//   </h4> */}
+//             </Box>
+// <Box className={clsx(classes.box2)}>
+//   <Box className={clsx(classes.inbox)}>
+//     <EmailIcon color="disabled" />
+//     <h5>{item.email}</h5>
+//   </Box>
+//    <Box className={clsx(classes.outbox)}>
+//      <BusinessIcon color="disabled" />
+//      <h5>{item.organization}</h5>
+//    </Box>
+// </Box>
+// <Box>
+//   {show == true ? (
+//     <OtherDetails
+//       experience={item.experience.label}
+//       time={item.time.label}
+//       people={item.people}
+//       date={item.date}
+//     />
+//   ) : null}
+//   {show == false ? (
+//     <ExpandMoreIcon onClick={showData} />
+//   ) : (
+//     <ArrowUpwardIcon onClick={showData} />
+//   )}
+// </Box>

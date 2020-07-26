@@ -12,19 +12,20 @@ export const useStyles = makeStyles((theme) => ({
     transform: "translate(2950%, -10%)",
   },
   avatar: {
-    width: 100,
+    width: 110,
     fontSize: 40,
-    height: 100,
+    height: 110,
   },
   paper: {
-    padding: "2%",
+    margin: "2%",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
     display: "flex",
-    // width: "100%",
-    // height: "100%",
+    width: "100%",
+    height: "100%",
   },
+
   box2: {
     padding: "2%",
     alignItems: "center",
